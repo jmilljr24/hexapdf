@@ -222,6 +222,10 @@ module HexaPDF
           @boxes[-1].upper_right
         end
 
+        def cut(x, y) # My edits. removes boxes outside of text being highlighted in long strings
+          @boxes.slice(x...y)
+        end
+
       end
 
       # Mapping of PDF operator names to message names that are sent to renderer implementations.
